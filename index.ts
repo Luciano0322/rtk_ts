@@ -4,9 +4,7 @@ import store from './store'
 
 console.log(`initial state `, store.getState());
 
-const unsubscribe = store.subscribe(() => {
-  console.log('updated state ', store.getState());
-})
+const unsubscribe = store.subscribe(() => {})
 
 store.dispatch(ordered())
 store.dispatch(ordered())

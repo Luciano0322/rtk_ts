@@ -38,6 +38,7 @@ const initialState: UserState = {
 }
 
 // Generates pending, fulfilled and rejected action types
+// 這裡代表外接api的處理方式
 export const fetchUsers = createAsyncThunk<string[], void>('user/fetchUsers', async () => {
   try {
     const res = axios.get('https://jsonplaceholder.typicode.com/users')
@@ -48,6 +49,7 @@ export const fetchUsers = createAsyncThunk<string[], void>('user/fetchUsers', as
   }
 })
 
+// 每個createAsyncThunk都會帶有三個情況，pending, fulfilled, rejected, 三種，對應的就是loading, reslove, reject
 const userSlice = createSlice({
   name: 'user',
   initialState,
